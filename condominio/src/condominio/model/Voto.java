@@ -3,17 +3,16 @@ package condominio.model;
 public class Voto {
 private int id;
 private String voto;
-private Utente utente;
-private Riunioni riunioni;
+
 
 public Voto () {}
 
 
-public Voto(int id, String voto, Utente utente) {
+public Voto(int id, String voto) {
 	super();
 	this.id = id;
 	this.voto = voto;
-	this.utente = utente;
+
 }
 
 
@@ -43,38 +42,22 @@ public void setVoto(String voto) {
 }
 
 
-public Utente getUtente() {
-	return utente;
-}
 
-
-public void setUtente(Utente utente) {
-	this.utente = utente;
-}
 
 
 @Override
 public String toString() {
-	return "Voto [id=" + id + ", voto=" + voto + ", utente=" + utente + "]";
+	return "Voto [id=" + id + ", voto=" + voto +  "]";
 }
 
 
-public Riunioni getRiunioni() {
-	return riunioni;
-}
 
 
-public void setRiunioni(Riunioni riunioni) {
-	this.riunioni = riunioni;
-}
-
-
-public Voto(int id, String voto, Utente utente, Riunioni riunioni) {
+public Voto(int id, String voto, Utente utente) {
 	super();
 	this.id = id;
 	this.voto = voto;
-	this.utente = utente;
-	this.riunioni = riunioni;
+
 }
 
 

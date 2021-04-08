@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="interfaccia.ClienteMapper">
+
+	
+
+<insert id = "insert"
+parameterType="condominio.model.Utente" 
+useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+	   insert into utente(username,password,cognome,interno,srcId,id_ruolo) values (#{username}
+	   , #{password}
+	   , #{cognome}
+	   , #{interno}
+	    , #{srcId}
+	     , #{id_ruolo}
+	 
+	   )
+	   
+	</insert>
+	
+	<update id = "update"
+	parameterType = "condominio.model.Utente">
+	update utente set username = #{username}
+	,password = #{password}
+	,cognome = #{cognome}
+	,interno = #{interno}
+	,srcId = #{srcId}
+	,id_ruolo = #{id_ruolo}
+	 where 
+	id = #{id}
+	</update>
+	
+	<delete id="delete" parameterType = "int">
+	delete from utente where id = #{id};
+	
+	
+	
+	</delete>
+	<select id="find" parameterType = "int" resultType = "condominio.model.Utente">
+	select * from utente where id = #{id};
+	
+	
+	</select>
+	
+	<select id="findAll" resultType ="condominio.model.Utente">
+	select * from utente
+	</select>
+	
+	
+	
+</mapper>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="interfaccia.ClienteMapper">
+
+	
+
+<insert id = "insert"
+parameterType="condominio.model.Documento" 
+useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+	   insert into documento(url_doc,commento) values (#{url_doc}
+	   , #{commento}
+	 
+	   )
+	   
+	</insert>
+	
+	<update id = "update"
+	parameterType = "condominio.model.Documento">
+	update documento set url_doc = #{url_doc}
+	,commento = #{commento}
+
+	 where 
+	id = #{id}
+	</update>
+	
+	<delete id="delete" parameterType = "int">
+	delete from documento where id = #{id};
+	
+	
+	
+	</delete>
+	<select id="find" parameterType = "int" resultType = "condominio.model.Utente">
+	select * from documento where id = #{id};
+	
+	
+	</select>
+	
+	<select id="findAll" resultType ="condominio.model.Utente">
+	select * from documento
+	</select>
+	
+	
+	
+</mapper>
