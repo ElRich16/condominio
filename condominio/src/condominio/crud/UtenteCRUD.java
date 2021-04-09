@@ -81,12 +81,7 @@ public void stampa(List<Utente> utenti) {
 	public Utente findlogin (Utente utente) {
 		
 		SqlMapFactory.instance().openSession();
-		try {
-			validatemaipassword(utente.getUsername(), utente.getPassword());
-		} catch (FieldError e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	//	validatemaipassword(utente.getUsername(), utente.getPassword());
 		UtenteMapper mapper = SqlMapFactory.instance().getMapper(UtenteMapper.class);
 		Utente ret = mapper.findlogin(utente);
 		
@@ -105,7 +100,8 @@ public void stampa(List<Utente> utenti) {
 			return false;
 		if(!(username.endsWith(".com") || username.endsWith(".it"))){
 			return false;
-		}
+			
+		} 
 				
 		if(password.length()<8)
 			return false;
