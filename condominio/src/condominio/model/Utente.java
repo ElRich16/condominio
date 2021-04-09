@@ -6,9 +6,25 @@ private String username;
 private String password;
 private String cognome;
 private String interno;
-private String srcid;
+private String srcId;
 private int id_ruolo;
+private String attivo;
+public String getSrcId() {
+	return srcId;
+}
+public void setSrcId(String srcId) {
+	this.srcId = srcId;
+}
+public String getAttivo() {
+	return attivo;
+}
+public void setAttivo(String attivo) {
+	this.attivo = attivo;
+}
 private Ruolo ruolo;
+
+
+
 public int getId() {
 	return id;
 }
@@ -40,10 +56,10 @@ public void setInterno(String interno) {
 	this.interno = interno;
 }
 public String getSrcid() {
-	return srcid;
+	return srcId;
 }
-public void setSrcid(String srcid) {
-	this.srcid = srcid;
+public void setSrcid(String srcId) {
+	this.srcId = srcId;
 }
 public int getId_ruolo() {
 	return id_ruolo;
@@ -57,7 +73,7 @@ public Ruolo getRuolo() {
 public void setRuolo(Ruolo ruolo) {
 	this.ruolo = ruolo;
 }
-public Utente(int id, String username, String password, String cognome, String interno, String srcid, int id_ruolo,
+public Utente(int id, String username, String password, String cognome, String interno, String srcId, int id_ruolo,
 		Ruolo ruolo) {
 	super();
 	this.id = id;
@@ -65,22 +81,39 @@ public Utente(int id, String username, String password, String cognome, String i
 	this.password = password;
 	this.cognome = cognome;
 	this.interno = interno;
-	this.srcid = srcid;
+	this.srcId = srcId;
 	this.id_ruolo = id_ruolo;
 	this.ruolo = ruolo;
 }
-public Utente(String username, String password, String cognome, String interno, String srcid, int id_ruolo) {
+public Utente(String username, String password, String cognome, String interno, String srcId, int id_ruolo) {
 	super();
 	this.username = username;
 	this.password = password;
 	this.cognome = cognome;
 	this.interno = interno;
-	this.srcid = srcid;
+	this.srcId = srcId;
 	this.id_ruolo = id_ruolo;
+}
+public Utente(String username, String password, String cognome, String interno, String srcId, int id_ruolo,
+		String attivo, Ruolo ruolo) {
+	super();
+	this.username = username;
+	this.password = password;
+	this.cognome = cognome;
+	this.interno = interno;
+	this.srcId = srcId;
+	this.id_ruolo = id_ruolo;
+	this.attivo = attivo;
+	this.ruolo = ruolo;
+}
+@Override
+public String toString() {
+	return "Utente [id=" + id + ", username=" + username + ", password=" + password + ", cognome=" + cognome
+			+ ", interno=" + interno + ", srcId=" + srcId + ", id_ruolo=" + id_ruolo + ", attivo=" + attivo + ", ruolo="
+			+ ruolo + "]";
 }
 
 
-public Utente () {}
 
 
 

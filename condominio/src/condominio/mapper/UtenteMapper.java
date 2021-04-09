@@ -2,6 +2,7 @@ package condominio.mapper;
 
 import java.util.List;
 
+import condominio.model.Documento;
 import condominio.model.Utente;
 
 public interface UtenteMapper {

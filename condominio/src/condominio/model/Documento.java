@@ -4,22 +4,21 @@ public class Documento {
 private int id;
 private String url_doc;
 private String commento;
+private int id_utente;
 private Utente utente;
 
 public Documento () {}
 
 
-public Documento(int id, String url_doc, String commento) {
-	super();
-	this.id = id;
-	this.url_doc = url_doc;
-	this.commento = commento;
+public int getId_utente() {
+	return id_utente;
 }
-public Documento(String url_doc, String commento) {
-	super();
-	this.url_doc = url_doc;
-	this.commento = commento;
+
+
+public void setId_utente(int id_utente) {
+	this.id_utente = id_utente;
 }
+
 public int getId() {
 	return id;
 }
@@ -44,17 +43,35 @@ public Utente getUtente() {
 public void setUtente(Utente utente) {
 	this.utente = utente;
 }
-public Documento(int id, String url_doc, String commento, Utente utente) {
+
+
+public Documento(int id, String url_doc, String commento, int id_utente, Utente utente) {
 	super();
 	this.id = id;
 	this.url_doc = url_doc;
 	this.commento = commento;
+	this.id_utente = id_utente;
 	this.utente = utente;
 }
-@Override
-public String toString() {
-	return "Documento [id=" + id + ", url_doc=" + url_doc + ", commento=" + commento + ", utente=" + utente + "]";
+
+
+public Documento(String url_doc, String commento, int id_utente) {
+	super();
+	this.url_doc = url_doc;
+	this.commento = commento;
+	this.id_utente = id_utente;
 }
+
+
+public Documento(int id, String url_doc, String commento, int id_utente) {
+	super();
+	this.id = id;
+	this.url_doc = url_doc;
+	this.commento = commento;
+	this.id_utente = id_utente;
+}
+
+
 
 
 

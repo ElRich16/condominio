@@ -2,19 +2,22 @@ package condominio.mapper;
 
 import java.util.List;
 
-import condominio.model.Utente;
+import condominio.model.Documento;
+
 
 public interface DocumentoMapper {
-	public void insert(Utente utente);
+	public void insert(Documento documento);
 
-	public void update(Utente utente);
+	public void update(Documento documento);
 
 	public void delete(int id);
 
-	public Utente find(int id);
+	public Documento find(int id);
 
-	public List<Utente> findAll();
+	public List<Documento> findAll();
 
-	public List<Utente> findAllWithStats();
+	public List<Documento> findAllWithStats();
+
+	
 
 }
