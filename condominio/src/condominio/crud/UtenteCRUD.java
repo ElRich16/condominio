@@ -1,0 +1,83 @@
+package condominio.crud;
+
+import java.util.List;
+
+import Exception.FieldError;
+import condominio.mapper.SqlMapFactory;
+import condominio.mapper.UtenteMapper;
+import condominio.model.Utente;
+
+
+
+public class UtenteCRUD {
+
+	public void insert(Utente utente) throws FieldError{
+//		validateInsert(utente); da implementare 
+		SqlMapFactory.instance().openSession();
+		
+		UtenteMapper mapper =  SqlMapFactory.instance().getMapper(UtenteMapper.class);
+		
+		mapper.insert(utente);
+		SqlMapFactory.instance().commitSession();
+		SqlMapFactory.instance().closeSession();
+		
+		
+		
+	}
+	public void update (Utente utente) throws FieldError {
+//	validateInsert(Utente);
+	SqlMapFactory.instance().openSession();
+	
+	UtenteMapper mapper = SqlMapFactory.instance().getMapper(UtenteMapper.class);
+	
+	mapper.update(utente);
+	SqlMapFactory.instance().commitSession();
+	SqlMapFactory.instance().closeSession();
+}
+public void delete(int id) {
+	SqlMapFactory.instance().openSession();
+	
+	UtenteMapper mapper = SqlMapFactory.instance().getMapper(UtenteMapper.class);
+	
+	mapper.delete(id);
+	SqlMapFactory.instance().commitSession();
+	SqlMapFactory.instance().closeSession();
+}
+
+
+public Utente find(int id) {
+	SqlMapFactory.instance().openSession();
+	
+	UtenteMapper mapper = SqlMapFactory.instance().getMapper(UtenteMapper.class);
+	Utente ret = mapper.find(id);
+	
+	
+	SqlMapFactory.instance().closeSession();
+	
+	return ret;
+	
+}
+public List<Utente> findAll() {
+	
+	SqlMapFactory.instance().openSession();
+	
+	UtenteMapper mapper = SqlMapFactory.instance().getMapper(UtenteMapper.class);
+	List<Utente> ret = mapper.findAll();
+	
+	
+	SqlMapFactory.instance().closeSession();
+	
+	return ret;
+	
+}
+
+public void stampa(List<Utente> utenti) {
+	int i = 0;
+	for (Utente utente : utenti) {
+		System.out.println(utente);
+		i++;
+	}
+}
+	
+	
+}
