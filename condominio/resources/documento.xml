@@ -10,9 +10,11 @@
 <insert id = "insert"
 parameterType="condominio.model.Documento" 
 useGeneratedKeys="true" keyProperty="id" keyColumn="id">
-	   insert into documento(url_doc,commento) values (#{url_doc}
-	   , #{commento}
-	 
+	   insert into documento(url_doc,commento,id_utente,titolo,id_ruolo) values (#{url_doc}
+	   ,#{commento}
+	   ,#{id_utente}
+	   ,#{titolo}
+	   ,#{id_ruolo}
 	   )
 	   
 	</insert>
@@ -21,7 +23,10 @@ useGeneratedKeys="true" keyProperty="id" keyColumn="id">
 	parameterType = "condominio.model.Documento">
 	update documento set url_doc = #{url_doc}
 	,commento = #{commento}
-
+	
+	,id_utente=#{id_utente}
+	,titolo= #{titolo}
+	,id_ruolo=#{id_ruolo}
 	 where 
 	id = #{id}
 	</update>

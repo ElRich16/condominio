@@ -16,6 +16,8 @@ public interface UtenteMapper {
 
 	public List<Utente> findAll();
 
-	public List<Utente> findAllWithStats();
+	public Utente findlogin(Utente utente);
+
+	
 
 }

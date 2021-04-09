@@ -16,6 +16,7 @@ useGeneratedKeys="true" keyProperty="id" keyColumn="id">
 	   , #{interno}
 	    , #{srcId}
 	     , #{id_ruolo}
+	     
 	 
 	   )
 	   
@@ -49,6 +50,8 @@ useGeneratedKeys="true" keyProperty="id" keyColumn="id">
 	select * from utente
 	</select>
 	
-	
+		<select id = "findlogin" parameterType ="Utente" resultType = "condominio.model.Utente">
+		SELECT u.username,u.password FROM utente u 
+	</select>
 	
 </mapper>

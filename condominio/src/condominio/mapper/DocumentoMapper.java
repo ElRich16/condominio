@@ -16,7 +16,7 @@ public interface DocumentoMapper {
 
 	public List<Documento> findAll();
 
-	public List<Documento> findAllWithStats();
+	
 
 	
 

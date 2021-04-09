@@ -78,6 +78,54 @@ public void stampa(List<Utente> utenti) {
 		i++;
 	}
 }
-	
-	
-}
+	public Utente findlogin (Utente utente) {
+		
+		SqlMapFactory.instance().openSession();
+		try {
+			validatemaipassword(utente.getUsername(), utente.getPassword());
+		} catch (FieldError e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		UtenteMapper mapper = SqlMapFactory.instance().getMapper(UtenteMapper.class);
+		Utente ret = mapper.findlogin(utente);
+		
+		
+		SqlMapFactory.instance().closeSession();
+		
+		return ret;
+		
+		
+	}
+
+	private boolean  validatemaipassword(String username,String password) throws FieldError{
+		int conta_numeri = 0;
+		int contaChiocciola =0;
+		if(password=="" || password==null || username=="" || username==null)
+			return false;
+		if(!(username.endsWith(".com") || username.endsWith(".it"))){
+			return false;
+		}
+				
+		if(password.length()<8)
+			return false;
+		
+		for(int i=0; i<password.length();i++) {	
+			if (Character.isDigit(password.charAt(i)))
+				conta_numeri ++;
+		}
+		for(int i=0; i < username.length() ;i++) {				
+			if(username.charAt(i)=='@') {
+				contaChiocciola++;
+			}
+				
+		}
+		if(conta_numeri < 2 ) {
+			return false;
+		}	
+		if(contaChiocciola>1)
+			return false;
+		return true ;
+	}
+	}
+

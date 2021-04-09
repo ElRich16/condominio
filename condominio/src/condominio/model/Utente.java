@@ -9,6 +9,8 @@ private String interno;
 private String srcId;
 private int id_ruolo;
 private String attivo;
+public Utente () {}
+
 public String getSrcId() {
 	return srcId;
 }
@@ -106,6 +108,8 @@ public Utente(String username, String password, String cognome, String interno, 
 	this.attivo = attivo;
 	this.ruolo = ruolo;
 }
+
+
 @Override
 public String toString() {
 	return "Utente [id=" + id + ", username=" + username + ", password=" + password + ", cognome=" + cognome

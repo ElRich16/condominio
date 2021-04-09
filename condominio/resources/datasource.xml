@@ -22,8 +22,7 @@
    <mappers>
       <mapper resource = "utente.xml"/>
       <mapper resource = "documento.xml"/>
-<!--      <mapper resource = "ruolo.xml"/>     -->
-<!--      <mapper resource = "riunioni.xml"/> -->
+     <mapper resource = "riunioni.xml"/> 
    </mappers>
   
 </configuration>

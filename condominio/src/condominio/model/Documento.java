@@ -6,7 +6,7 @@ private String url_doc;
 private String commento;
 private int id_utente;
 private Utente utente;
-
+private String titolo;
 public Documento () {}
 
 
@@ -45,13 +45,27 @@ public void setUtente(Utente utente) {
 }
 
 
-public Documento(int id, String url_doc, String commento, int id_utente, Utente utente) {
+
+
+
+public Documento(int id, String url_doc, String commento, int id_utente, Utente utente, String titolo) {
 	super();
 	this.id = id;
 	this.url_doc = url_doc;
 	this.commento = commento;
 	this.id_utente = id_utente;
 	this.utente = utente;
+	this.titolo = titolo;
+}
+
+
+public String getTitolo() {
+	return titolo;
+}
+
+
+public void setTitolo(String titolo) {
+	this.titolo = titolo;
 }
 
 
