@@ -18,6 +18,8 @@ public interface RiunioniMapper {
 
 	public List<Riunioni> findAll();
 
-	public Riunioni findRiunioniByUtente (String titolo);
+	
 
+	
+	
 }

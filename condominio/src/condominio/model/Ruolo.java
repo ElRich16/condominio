@@ -3,24 +3,24 @@ package condominio.model;
 public class Ruolo {
 
 	private int id;
-	private int ruolo;
+	private String ruolo;
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getRuolo() {
+	public String getRuolo() {
 		return ruolo;
 	}
-	public void setRuolo(int ruolo) {
+	public void setRuolo(String ruolo) {
 		this.ruolo = ruolo;
 	}
 	
 	public Ruolo () {}
 	
 	
-	public Ruolo(int id, int ruolo) {
+	public Ruolo(int id, String ruolo) {
 		super();
 		this.id = id;
 		this.ruolo = ruolo;

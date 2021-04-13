@@ -3,29 +3,16 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
-<mapper namespace="condominio.mapper.RiunioniMapper">
-<resultMap id="findRiunioniByUtenteRM" type="condominio.model.Riunioni">
-<id property="id" column="id" />
-<result property="id_utente" column="id_utente" />
-<result property="voto" column="voto" />
-<result property="nome_riunione" column="nome_riunione" />
-<result property="data" column="data" />
 
 
-<association property="utente" javaType="condominio.model.Utente">
-<id property="id" column="id_utente" />
-<result property="cognome" column="cognome"/>
-<result property="interno"  column="interno"/>
-</association>
-
-</resultMap>
+<mapper>
 	
 
 <insert id = "insert"
 parameterType="condominio.model.Riunioni" 
 useGeneratedKeys="true" keyProperty="id" keyColumn="id">
-	   insert into riunioni(id_utente,voto,nome_riunione,data) values (#{id_utente}
-	   , #{voto}
+	   insert into riunioni(id_utente,nome_riunione,data) values (#{id_utente}
+	   
 	   , #{nome_riunione}
 	   , #{data}
 	   
@@ -38,7 +25,7 @@ useGeneratedKeys="true" keyProperty="id" keyColumn="id">
 	<update id = "update"
 	parameterType = "condominio.model.Documento">
 	update documento set id_utentwe = (#{id_utente}
-	   , voto =#{voto}
+	
 	   , nome_riunione = #{nome_riunione}
 	   , data = #{data}
 
@@ -62,10 +49,6 @@ useGeneratedKeys="true" keyProperty="id" keyColumn="id">
 	select * from riunioni
 	</select>
 	
-	<select id="findRiunioniByUtente" resultMap ="findRiunioniByUtenteRM">                         
-	 SELECT r.nome_riunione,r.voto, u.cognome,u.interno FROM riunioni r INNER JOIN
-     utente u ON r.id_utente = u.id
-      WHERE r.nome_riunione = #{titolo}
-	</select>	
+
 
 </mapper>

@@ -3,11 +3,10 @@ package condominio.crud;
 import java.util.List;
 
 import Exception.FieldError;
-
+import condominio.mapper.DocumentoMapper;
 import condominio.mapper.RiunioniMapper;
 import condominio.mapper.SqlMapFactory;
-
-
+import condominio.model.Documento;
 import condominio.model.Riunioni;
 
 public class RiunioniCRUD {
@@ -80,16 +79,6 @@ public class RiunioniCRUD {
 		}
 	
 	}
-	public Riunioni findRiunioniByUtente (String titolo) {
-SqlMapFactory.instance().openSession();
-		
-		RiunioniMapper mapper = SqlMapFactory.instance().getMapper(RiunioniMapper.class);
-		Riunioni ret = mapper.findRiunioniByUtente(titolo);
-		
-		
-		SqlMapFactory.instance().closeSession();
-		
-		return ret;
-		
-	}
+	
+
 }

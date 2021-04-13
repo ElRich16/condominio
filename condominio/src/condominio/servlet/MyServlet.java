@@ -7,7 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Exception.FieldError;
 import condominio.crud.UtenteCRUD;
+import condominio.model.Ruolo;
 import condominio.model.Utente;
 
 /**
@@ -42,16 +44,42 @@ public class MyServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		Utente u = new Utente ();
+		Ruolo r = new Ruolo();
+		
 		String signin = request.getParameter("do");
 		String view = "";
 		String err = "";
 		if (signin.equals("login")){
 			String username = request.getParameter("username");
 			String password = request.getParameter("password");
-			Utente u = new Utente ();
+			
 			u.setUsername(username);
 			u.setPassword(password);
-			uc.findlogin(u);
+			try {
+				uc.findlogin(u);
+				if(u.getId_ruolo()== 1);{
+					r.setRuolo("admin");
+				}
+				if(u.getId_ruolo()==2);{
+					r.setRuolo("user");
+				}
+				if(u.getRuolo().getRuolo().equals("admin")) {
+					request.getSession().setAttribute("u", u);
+					response.sendRedirect("homeadmin.jsp");
+					return;
+				}
+					else {
+						request.getSession().setAttribute("u", u);
+						response.sendRedirect("home.jsp");
+						return;
+					}
+				}
+			 catch (FieldError e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 			
 			

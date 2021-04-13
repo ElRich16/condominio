@@ -13,10 +13,10 @@ public class UtenteTest {
 //
 //	
 //uc.delete(2);
-	
-	Riunioni r = new Riunioni();
-	RiunioniCRUD rc = new RiunioniCRUD();
-	System.out.println(rc.findRiunioniByUtente("titolo"));
+//	
+//	Riunioni r = new Riunioni();
+//	RiunioniCRUD rc = new RiunioniCRUD();
+//	System.out.println(rc.findRiunioniByUtente("titolo"));
 
 	}
 
